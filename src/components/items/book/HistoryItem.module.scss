@@ -1,0 +1,64 @@
+
+
+.item {
+  display: flex;
+  margin-bottom: 47px;
+}
+
+.coverpage {
+  width: 350px;
+  height: 200px;
+  border-radius: 20px;
+  margin-bottom: 11px;
+  margin-right: 45px;
+}
+.stats {
+  display: flex;
+}
+.count_stats {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  margin-right: 6px;
+  font-size: 18px;
+}
+.count_stats svg {
+  width: 15px;
+  height: 15px;
+  margin-right: 8px;
+}
+.author_name {
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.book_name {
+  font-size: 24px;
+  color: #fff;
+  line-height: 29px;
+  margin-bottom: 12px;
+}
+.series_count {
+  display: flex;
+  color: #888;
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+.series_name {
+  text-decoration: underline;
+  margin-right: 5px;
+}
+.series {
+  margin-left: 5px;
+}
+.description {
+  font-size: 18px;
+  color: #fff;
+  display: -webkit-box; /* Для WebKit */
+  -webkit-box-orient: vertical; /* Для WebKit */
+  overflow: hidden; /* Скрывает текст, который не помещается */
+  text-overflow: ellipsis; /* Добавляет многоточие */
+  -webkit-line-clamp: 3; /* Количество строк для WebKit */
+}

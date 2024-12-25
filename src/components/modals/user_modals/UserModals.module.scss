@@ -1,0 +1,42 @@
+.button {
+  all: unset;
+  height: 42px;
+  margin-bottom: 25px;
+  color: #fff;
+  font-size: 32px;
+  line-height: 38px;
+  text-wrap: nowrap;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  &:hover {
+    color: #3f3f3f;
+  }
+}
+.icon {
+  width: 42px;
+  height: 42px;
+  margin-right: 24px;
+}
+.modal {
+  position: absolute;
+  padding-left: 22px;
+  padding-right: 27px;
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 248px;
+  height: 238px;
+  border-radius: 20px;
+  right: 70px;
+  border: 1px solid #fff;
+  background-color: #000;
+  z-index: 9999;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

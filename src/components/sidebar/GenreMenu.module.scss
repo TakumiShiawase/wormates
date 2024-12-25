@@ -1,0 +1,39 @@
+.button {
+  width: 192px;
+  height: 42px;
+  border: none;
+  display: flex;
+  padding-left: 18px;
+  align-items: center;
+  border-radius: 15px;
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  .active {
+    background-color: #3f3f3f;
+  }
+  &:hover {
+    background-color: #3f3f3f;
+  }
+}
+
+.arrow_button {
+  width: 192px;
+  height: 42px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background-color 0.3s;
+  &:hover {
+    background-color: #3f3f3f;
+  }
+}
+.button_icon {
+  margin-right: 12px;
+}

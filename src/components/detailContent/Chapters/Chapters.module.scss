@@ -1,0 +1,38 @@
+.grid_container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 столбца */
+  gap: 16px; /* Расстояние между столбцами */
+  padding: 16px;
+  margin-top: 20px;
+  min-height: calc(100vh - 80px);
+}
+
+/* Каждый столбец */
+.grid_column {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Отступ между главами */
+}
+
+/* Элемент главы */
+.chapter_item {
+  background-color: #101010;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  width: 150px;
+  height: 50px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  transition: transform 0.2s, background-color 0.2s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 20px;
+}
+
+.chapter_item:hover {
+  background-color: #280038;
+  transform: translateY(-3px);
+}

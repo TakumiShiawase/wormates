@@ -1,0 +1,16 @@
+.tabsHeader {
+  border-bottom: 1px solid #fff;
+  width: 100%;
+  z-index: 0;
+}
+.tabButton {
+  width: 120px;
+  height: 40px;
+  border: 1px solid #fff;
+  border-radius: 20px 0 0 0;
+  color: #fff;
+  background-color: initial;
+}
+.active {
+  background-color: #280038;
+}

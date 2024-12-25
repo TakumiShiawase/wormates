@@ -1,0 +1,79 @@
+.library {
+  position: relative;
+  height: 100%;
+}
+.library_items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 38px;
+  padding: 10px;
+}
+.library_button {
+  margin-right: 38px;
+  font-size: 24px;
+  color: #fff;
+  background: inherit;
+  border: none;
+}
+.library_button_active {
+  margin-right: 38px;
+  font-size: 24px;
+  color: #fff;
+  background: #353535;
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+}
+.library_tab {
+  height: 62px;
+  background: #000;
+  position: sticky; /* Делает элемент фиксированным внутри родителя */
+  top: 0; /* Ставим его в верхнюю часть родителя */
+}
+.library_item {
+  width: 180px;
+  position: relative;
+}
+.library_item_img:hover {
+  transform: translateY(-5px); /* Легкое поднятие изображения */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Увеличенная тень */
+}
+
+.library_item:hover .library_item_img {
+  transform: translateY(
+    -5px
+  ); /* Это чтобы применить подъем на картинку при наведении на родителя */
+}
+.library_item_img {
+  position: relative;
+  width: 180px;
+  height: 200px;
+  border-radius: 20px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.library_item_name {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 10px;
+  transition: none;
+}
+.library_item_author {
+  font-size: 16px;
+  color: #858585;
+  transition: none;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.library_item {
+  animation: fadeIn 0.5s ease-out;
+}

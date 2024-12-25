@@ -1,0 +1,120 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.create_view {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 28px;
+  margin-bottom: 29px;
+}
+
+.basic {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 21px;
+  margin-bottom: 28px;
+}
+
+.input {
+  width: 310px;
+  height: 42px;
+  background-color: #000;
+  border: 1px solid #2b2b2b;
+  border-radius: 40px;
+  color: #fff;
+  font-size: 24px;
+  line-height: 29px;
+  padding-left: 20px;
+  margin-bottom: 26px;
+  &::placeholder {
+    color: #888888;
+  }
+  &:focus {
+    border-color: #ffffff;
+    outline: none;
+  }
+}
+.dob_view {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  margin-bottom: 11px;
+}
+.dob_container {
+  display: flex;
+}
+.select_container {
+  width: 174px;
+  height: 40px;
+  position: relative;
+  .select {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    width: 174px;
+    height: 40px;
+    color: #fff;
+    background-color: #000;
+    border: 1px solid #2b2b2b;
+    border-radius: 40px;
+    font-size: 24px;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+}
+.select_container::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 11px;
+  transform: translateY(-50%);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid gray; /* Серый треугольник */
+  pointer-events: none; /* Чтобы стрелка не перекрывала select */
+  z-index: 2;
+}
+.year_input {
+  width: 135px;
+  height: 40px;
+  background-color: #000;
+  border: 1px solid #2b2b2b;
+  border-radius: 40px;
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+
+  &::placeholder {
+    color: #888888;
+  }
+  &:focus {
+    border-color: #ffffff;
+    outline: none;
+  }
+}
+
+.button {
+  width: 135px;
+  height: 42px;
+  background-color: #000;
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 29px;
+  border: 1px solid #2b2b2b;
+  border-radius: 40px;
+  margin-top: 35px;
+  margin-left: 172px;
+  color: #fff;
+  &:active {
+    border-color: #ffffff;
+    outline: none;
+    color: #888888;
+  }
+}

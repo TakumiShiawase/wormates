@@ -1,0 +1,53 @@
+html,
+body,
+#root {
+  height: 100%; /* Корневой контейнер занимает весь экран */
+  margin: 0; /* Убираем отступы */
+  padding: 0;
+
+  font-family: 'Telex', sans-serif;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  ::-webkit-scrollbar {
+    display: none; /* Для Chrome, Safari и Opera */
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield; /* Firefox */
+  -webkit-appearance: none; /* Chrome, Safari */
+  appearance: none; /* Для других браузеров */
+
+  /* Убираем стрелки в браузерах WebKit */
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.sidebar {
+  width: 256px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ul {
+  list-style: none; /* Убираем маркеры (точки) */
+  margin: 0; /* Убираем отступы по умолчанию */
+  padding: 0; /* Убираем внутренние отступы */
+}
+textarea {
+  all: unset;
+  resize: none;
+}
