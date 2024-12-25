@@ -32,7 +32,7 @@ const HistoryItem = ({ book }) => {
       <div className={styles.info}>
         <div className={styles.author_name}>{book.author_name}</div>
         <Link to={`/book/${book.id}`}>
-          <div className={styles.book_name}>{book.book_name}</div>
+          <div className={styles.book_name}>{book.name}</div>
         </Link>
         <div className={styles.series_count}>
           <div className={styles.series_name}>Series: {book.series_name}</div> •
