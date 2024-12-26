@@ -66,3 +66,32 @@ export const getDescription = async (username) => {
 export const updateDescription = async (username, description) => {
   await api.put(`/users/api/${username}/description/`, { description });
 };
+
+export const fetchMainpageSettings = async () => {
+  try {
+    const response = await api.get('/users/api/settings/mainpage/', {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`, // Добавляем токен
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching user settings:', error);
+    throw error;
+  }
+};
+
+export const updateMainpageSettings = async (settings) => {
+  try {
+    const response = await api.patch('/users/api/settings/mainpage/', settings, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+        'Content-Type': 'application/json',
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error updating user settings:', error);
+    throw error;
+  }
+};

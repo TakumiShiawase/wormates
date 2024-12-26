@@ -4,6 +4,7 @@ import profileReducer from './profile/profileReducer'; // Редьюсер пр�
 import registerReducer from './register/registerReducer';
 import navReducer from './navigation/navReducer';
 import genreReducer from './genre/genreReducer';
+import userSettingsReducer from './mainpage_settings/authActions.js';
 
 const rootReducer = combineReducers({
   auth: authReducer,
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   register: registerReducer,
   nav: navReducer,
   genre: genreReducer,
+  userSettings: userSettingsReducer,
 });
 
 export default rootReducer;

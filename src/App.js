@@ -8,6 +8,7 @@ import Profile from './components/content/profile/Profile.js';
 import News from './components/content/news/News.js';
 import History from './components/content/history/History.js';
 import Home from './components/content/home/Home.js';
+import Reader from './pages/reader/Reader.js';
 
 import './App.css';
 
@@ -17,6 +18,7 @@ const App = () => {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/book/:book_id/chapter/" element={<Reader />} />
         <Route path="/" element={<Mainpage />}>
           <Route path="/" element={<Home />} />
           <Route path="/library" element={<Profile />} />

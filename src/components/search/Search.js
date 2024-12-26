@@ -18,7 +18,7 @@ const Search = ({
   debounceDelay = 500,
   inputClassName = '',
   containerClassName = '',
-  iconStyle = {},
+  iconStyle = '',
 }) => {
   const [query, setQuery] = useState('');
 
@@ -36,6 +36,7 @@ const Search = ({
 
   return (
     <div className={`${containerClassName}`}>
+      <SearchIcon className={`${iconStyle}`} />
       <input
         type="text"
         className={`${inputClassName}`}
@@ -43,7 +44,6 @@ const Search = ({
         onChange={handleInputChange}
         placeholder={placeholder}
       />
-      <SearchIcon style={{ ...iconStyle }} />
     </div>
   );
 };

@@ -45,14 +45,16 @@
 }
 .line {
   width: 192px;
-  border: 1px solid #fff;
   margin-bottom: 20px;
+  font-size: 5px;
+  color: #fff;
 }
 .fol_line {
   width: 192px;
-  border: 1px solid #fff;
   margin-top: 20px;
   margin-bottom: 20px;
+  font-size: 5px;
+  color: #fff;
 }
 
 .button_icon {
@@ -62,4 +64,30 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.setting_buttons {
+  display: flex;
+  margin-top: 20px;
+
+  margin-left: 18px;
+}
+.setting {
+  margin-right: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.setting_icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+.setting_view {
+  margin-top: 5px;
+  color: #fff;
 }

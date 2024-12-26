@@ -76,7 +76,9 @@ const SidebarMenu = () => {
           isActive={activeButton === 'news'}
         />
       )}
-      <div className={styles.line}></div>
+      <div className={styles.line}>
+        oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+      </div>
       <SidebarButton
         label="Books"
         className={styles.sidebar_book}
@@ -87,7 +89,9 @@ const SidebarMenu = () => {
       <GenreMenu />
       {isAuth && (
         <div>
-          <div className={styles.line}></div>
+          <div className={styles.line}>
+            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+          </div>
 
           <SidebarButton
             label="Followers"
@@ -100,21 +104,29 @@ const SidebarMenu = () => {
           <FollowersList />
         </div>
       )}
-      <div className={styles.fol_line}></div>
-      <SidebarButton
-        label="Settings"
-        className={styles.sidebar_button}
-        classActive={styles.sidebar_button_active}
-        icon={<Setting />}
-        iconClass={styles.button_icon}
-      />
-      <SidebarButton
-        label="Help"
-        className={styles.sidebar_button}
-        classActive={styles.sidebar_button_active}
-        icon={<Help />}
-        iconClass={styles.button_icon}
-      />
+      <div className={styles.fol_line}>
+        oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+      </div>
+      <div className={styles.setting_buttons}>
+        <div className={styles.setting}>
+          <SidebarButton
+            className={styles.setting_button}
+            classActive={styles.setting_button_active}
+            icon={<Setting />}
+            iconClass={styles.setting_icon}
+          />
+          <div className={styles.setting_view}>Setting</div>
+        </div>
+        <div className={styles.setting}>
+          <SidebarButton
+            className={styles.setting_button}
+            classActive={styles.setting_button_active}
+            icon={<Help />}
+            iconClass={styles.setting_icon}
+          />
+          <div className={styles.setting_view}>Help</div>
+        </div>
+      </div>
     </ul>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useBookDetail } from '../../hooks/useBookDetail';
 import styles from './BookDetail.module.scss';
 import RecommendationsList from '../../components/reccomendation/Reccom';
@@ -54,7 +54,9 @@ const BookDetail = () => {
                 <Download className={styles.book_detail_coverpage_menu_dowload_icon} />
               </button>
               <button className={styles.book_detail_coverpage_menu_wish}>+ Wish List</button>
-              <button className={styles.book_detail_coverpage_menu_read}>Read</button>
+              <Link to={`/book/${book_id}/chapter/`}>
+                <button className={styles.book_detail_coverpage_menu_read}>Read</button>
+              </Link>
               <div className={styles.book_detail_coverpage_menu_vote}>
                 <Like className={styles.book_detail_coverpage_menu_like_icon} />{' '}
                 {bookDetail.upvotes}
