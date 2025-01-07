@@ -1,28 +1,56 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import styles from './Reader.module.scss';
 import { ReactComponent as TextSize } from '../../assets/icon/text_size.svg';
+import useSettingsModal from '../../hooks/useSettingsModal';
 
-function SettingsModal({ onClose, onStyleChange }) {
-  const [textSize, setTextSize] = useState(16);
-  const [textWidth, setTextWidth] = useState(600);
-  const [rowHeight, setRowHeight] = useState(1.5);
-  const [font, setFont] = useState('Arial');
+function SettingsModal({
+  onClose,
+  onStyleChange,
+  textSize,
+  setTextSize,
+  textWidth,
+  setTextWidth,
+  rowHeight,
+  setRowHeight,
+  font,
+  setFont,
+  theme,
+  setTheme,
+}) {
+  const { saveSettings } = useSettingsModal();
 
   useEffect(() => {
-    document.documentElement.style.setProperty('--text-size', `${textSize}px`);
-  }, [textSize]);
+    onStyleChange(`main_${theme}`);
+  }, [theme, onStyleChange]);
 
-  useEffect(() => {
-    document.documentElement.style.setProperty('--text-width', `${textWidth}px`);
-  }, [textWidth]);
+  const handleTextSizeChange = (e) => {
+    const newSize = parseInt(e.target.value);
+    setTextSize(newSize);
+    saveSettings({ textSize: newSize });
+  };
 
-  useEffect(() => {
-    document.documentElement.style.setProperty('--row-height', rowHeight);
-  }, [rowHeight]);
+  const handleTextWidthChange = (e) => {
+    const newWidth = parseInt(e.target.value);
+    setTextWidth(newWidth);
+    saveSettings({ textWidth: newWidth });
+  };
 
-  useEffect(() => {
-    document.documentElement.style.setProperty('--font', font);
-  }, [font]);
+  const handleRowHeightChange = (e) => {
+    const newHeight = parseFloat(e.target.value);
+    setRowHeight(newHeight);
+    saveSettings({ rowHeight: newHeight });
+  };
+
+  const handleFontChange = (e) => {
+    const newFont = e.target.value;
+    setFont(newFont);
+    saveSettings({ font: newFont });
+  };
+
+  const handleThemeChange = (newTheme) => {
+    setTheme(newTheme);
+    saveSettings({ theme: newTheme });
+  };
 
   return (
     <div className={styles.modal}>
@@ -36,7 +64,7 @@ function SettingsModal({ onClose, onStyleChange }) {
           min="10"
           max="30"
           value={textSize}
-          onChange={(e) => setTextSize(e.target.value)}
+          onChange={handleTextSizeChange}
           className={styles.slider}
         />
       </div>
@@ -50,14 +78,14 @@ function SettingsModal({ onClose, onStyleChange }) {
           min="400"
           max="800"
           value={textWidth}
-          onChange={(e) => setTextWidth(e.target.value)}
+          onChange={handleTextWidthChange}
           className={styles.slider}
         />
       </div>
       <div className={styles.input_cont}>
         <div className={styles.views_cont}>
           <TextSize className={styles.icon} />
-          <span>Row Heigth</span>
+          <span>Row Height</span>
         </div>
         <input
           type="range"
@@ -65,13 +93,13 @@ function SettingsModal({ onClose, onStyleChange }) {
           max="2"
           step="0.1"
           value={rowHeight}
-          onChange={(e) => setRowHeight(e.target.value)}
+          onChange={handleRowHeightChange}
           className={styles.slider}
         />
       </div>
       <div>
         <div className={styles.views_parm}>Font</div>
-        <select className={styles.font} value={font} onChange={(e) => setFont(e.target.value)}>
+        <select className={styles.font} value={font} onChange={handleFontChange}>
           <option value="Arial">Arial</option>
           <option value="Times New Roman">Times New Roman</option>
           <option value="Courier New">Courier New</option>
@@ -79,15 +107,12 @@ function SettingsModal({ onClose, onStyleChange }) {
       </div>
       <div className={styles.views_theme}>Theme</div>
       <div className={styles.theme}>
-        <button
-          className={styles.button_light}
-          onClick={() => onStyleChange('main_light')}></button>
-        <button className={styles.button_dark} onClick={() => onStyleChange('main_dark')}></button>
-        <button
-          className={styles.button_sepia}
-          onClick={() => onStyleChange('main_sepia')}></button>
+        <button className={styles.button_light} onClick={() => handleThemeChange('light')}></button>
+        <button className={styles.button_dark} onClick={() => handleThemeChange('dark')}></button>
+        <button className={styles.button_sepia} onClick={() => handleThemeChange('sepia')}></button>
       </div>
     </div>
   );
 }
+
 export default SettingsModal;

@@ -1,8 +1,8 @@
 import SidebarButton from './SidebarButton';
 import GenreMenu from './GenreMenu';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './SidebarMenu.module.scss';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { isAuthenticated } from '../../redux/auth/authSelectors';
 import { ReactComponent as Home } from '../../assets/icon/home.svg';
@@ -16,9 +16,20 @@ import FollowersList from '../followers/FollowersList';
 
 const SidebarMenu = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [activeButton, setActiveButton] = useState(null);
   const isAuth = useSelector(isAuthenticated);
 
+  useEffect(() => {
+    const path = location.pathname;
+    if (path.includes('library')) {
+      setActiveButton('library');
+    } else if (path === '/') {
+      setActiveButton('');
+    } else {
+      setActiveButton(path.substring(1));
+    }
+  }, [location]);
   const handleClick = (label) => {
     setActiveButton(label); // Обновление активной кнопки
     if (label === 'library') {
@@ -38,12 +49,12 @@ const SidebarMenu = () => {
     <ul className={styles.sidebar_container}>
       <SidebarButton
         label="Home"
-        onClick={() => handleClick('/')}
+        onClick={() => handleClick('')}
         className={styles.sidebar_button}
         classActive={styles.sidebar_button_active}
         icon={<Home />}
         iconClass={styles.button_icon}
-        isActive={activeButton === '/'}
+        isActive={activeButton === ''}
       />
       <SidebarButton
         label="Library"

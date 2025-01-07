@@ -1,0 +1,69 @@
+.headerMobile {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 42px;
+  background-color: #000;
+  padding-left: 13px;
+  padding-right: 5px;
+  z-index: 9999;
+}
+.search_container {
+  position: relative;
+  margin-left: 41px;
+  width: 100%;
+  margin-right: 20px;
+  height: 28px;
+}
+.avatar {
+  width: 30px;
+  height: 30px;
+}
+.avatar_img {
+  margin-top: 2px;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+.studio {
+  margin-right: 52px;
+}
+.notification {
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.search_input {
+  width: 100%;
+  height: 28px;
+  background-color: #3f3f3f;
+  border-radius: 40px;
+  border: none;
+  font-size: 16px;
+  text-align: center;
+  color: #fff;
+}
+
+.search_icon {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 10px; /* Позиционируйте иконку с правой стороны */
+  top: 50%;
+  transform: translateY(-50%);
+}
+.sign_in {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2px;
+}
+.avatar_views {
+  color: #fff;
+  font-size: 8px;
+}

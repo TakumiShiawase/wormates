@@ -8,7 +8,7 @@ function ReaderSidebar({ bookId }) {
   return (
     <div className={styles.sidebar}>
       <LogoMini className={styles.logo_mini} />
-      <ul>
+      <ul className={styles.sidebar_title}>
         {chapters.map((chapter) => (
           <li className={styles.sidebar_chapter} key={chapter.id}>
             {chapter.title}

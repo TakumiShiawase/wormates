@@ -1,0 +1,14 @@
+.mainpage {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #000;
+}
+.container {
+  flex: 1;
+  margin-top: 42px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 58px;
+  background-color: #101010;
+}

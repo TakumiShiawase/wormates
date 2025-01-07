@@ -8,7 +8,11 @@ import Profile from './components/content/profile/Profile.js';
 import News from './components/content/news/News.js';
 import History from './components/content/history/History.js';
 import Home from './components/content/home/Home.js';
+import HomeMobile from './components/mobile/home/HomeMobile.js';
 import Reader from './pages/reader/Reader.js';
+import MainpageMobile from './pages/mobile/mainpage/MainpageMobile.js';
+import BookDetailMobile from './pages/mobile/book_detail/BookDetailMobile.js';
+import { isMobile } from 'react-device-detect';
 
 import './App.css';
 
@@ -16,6 +20,10 @@ const App = () => {
   return (
     <Router>
       <Routes>
+        <Route path="/test" element={<MainpageMobile />}>
+          <Route path="/test" element={<HomeMobile />} />
+          <Route path="/test/:book_id" element={<BookDetailMobile />} />
+        </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/book/:book_id/chapter/" element={<Reader />} />

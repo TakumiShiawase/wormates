@@ -1,5 +1,5 @@
 import styles from './Header.module.scss';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ReactComponent as Logo } from '../../assets/icon/logo.svg';
 import { ReactComponent as Avatar } from '../../assets/icon/avatar.svg';
 import { ReactComponent as Studio } from '../../assets/icon/studio_link.svg';
@@ -11,6 +11,7 @@ import Button from '../LogInput/LogButton';
 import { Link } from 'react-router-dom';
 import { isAuthenticated } from '../../redux/auth/authSelectors';
 import UserModals from '../modals/user_modals/UserModals';
+import { loadUserSettings } from '../../redux/mainpage_settings/authActions';
 
 const Header = () => {
   const isAuth = useSelector(isAuthenticated);
@@ -23,9 +24,17 @@ const Header = () => {
   const dispatch = useDispatch();
   const viewMode = useSelector((state) => state.userSettings.data.view_mode);
 
+  useEffect(() => {
+    if (!viewMode) {
+      dispatch(loadUserSettings()); // Загружаем настройки с сервера при старте
+    }
+  }, [dispatch, viewMode]);
+
   const handleSetViewMode = (mode) => {
-    dispatch(setViewMode(mode)); // Обновляем состояние локально
-    dispatch(saveUserSettings({ view_mode: mode })); // Сохраняем на сервере
+    dispatch(setViewMode(mode)); // Локальное обновление
+    dispatch(saveUserSettings({ view_mode: mode })).then(() => {
+      dispatch(loadUserSettings()); // Перезагружаем данные
+    });
   };
 
   const handleSearch = (query) => {

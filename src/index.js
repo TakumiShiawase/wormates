@@ -6,7 +6,9 @@ import { store, persistor } from './redux/store'; // Используем име
 import App from './App';
 import './styles/globals.scss';
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+root.render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
       <App />

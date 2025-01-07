@@ -70,10 +70,13 @@
     border-radius: 40px;
     background-color: #3f3f3f;
     color: #fff;
-    padding-left: 20px;
+    padding-left: 150px;
+    padding-right: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     border: none;
     font-size: 24px;
-    text-align: center;
     transition: background-color 0.3s ease;
 
     &:focus {
@@ -81,10 +84,6 @@
       outline: none; // Убираем стандартную обводку
       text-align: left;
       padding-left: 70px;
-    }
-
-    ::placeholder {
-      color: #fff;
     }
   }
   .search_icon {

@@ -26,13 +26,7 @@ export const saveUserSettings = createAsyncThunk(
 const userSettingsSlice = createSlice({
   name: 'userSettings',
   initialState: {
-    data: {
-      main_page_theme: 'default_theme',
-      show_first_books: false,
-      show_only_free_books: false,
-      restricted_mode: false,
-      view_mode: 'horizontal',
-    },
+    data: {},
     status: 'idle',
     error: null,
   },
@@ -43,7 +37,6 @@ const userSettingsSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      // Загрузка настроек
       .addCase(loadUserSettings.pending, (state) => {
         state.status = 'loading';
         state.error = null;
@@ -55,19 +48,20 @@ const userSettingsSlice = createSlice({
       .addCase(loadUserSettings.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.payload;
+        console.error('Ошибка загрузки настроек:', action.payload);
       })
-      // Сохранение настроек
       .addCase(saveUserSettings.pending, (state) => {
         state.status = 'loading';
         state.error = null;
       })
       .addCase(saveUserSettings.fulfilled, (state, action) => {
         state.status = 'success';
-        state.data = action.payload;
+        state.data = { ...state.data, ...action.payload }; // Обновляем только изменённые поля
       })
       .addCase(saveUserSettings.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.payload;
+        console.error('Ошибка сохранения настроек:', action.payload);
       });
   },
 });

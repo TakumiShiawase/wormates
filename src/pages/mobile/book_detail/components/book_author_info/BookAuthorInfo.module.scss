@@ -1,0 +1,51 @@
+.author_info {
+  background: #000;
+  height: 41px;
+}
+.author_container {
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  justify-content: space-between;
+  height: 100%;
+}
+.author_content {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.author_name {
+  color: #fff;
+  font-size: 10px;
+  margin-left: 10px;
+}
+.followers {
+  color: #c8c8c8;
+  font-size: 10px;
+  margin-left: 10px;
+}
+.follow_button {
+  width: 53px;
+  height: 13px;
+  border: none;
+  border-radius: 8px;
+  background: #3f3f3f;
+  color: #fff;
+  font-size: 10px;
+  transition: background 0.3s ease, transform 0.1s ease;
+  &:hover {
+    background: #555;
+  }
+
+  &:active {
+    background: #222;
+    transform: scale(0.95);
+  }
+}

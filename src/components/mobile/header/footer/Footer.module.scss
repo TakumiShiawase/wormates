@@ -1,0 +1,29 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  height: 60px;
+  width: 100%;
+  padding-left: 25px;
+  padding-right: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #000;
+}
+.footer_button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 8px;
+  cursor: pointer;
+  .icon {
+    fill: #fff;
+  }
+}
+
+.footer_button.active {
+  color: #bd00ff;
+  .icon {
+    fill: #bd00ff;
+  }
+}
