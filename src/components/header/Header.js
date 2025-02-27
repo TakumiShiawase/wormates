@@ -72,7 +72,9 @@ const Header = () => {
       </div>
       {isAuth ? (
         <div className={styles.user_menu}>
-          <Button type="button" icon={<Studio />} customClass={styles.users_button} />
+          <Link to={'/studio'}>
+            <Button type="button" icon={<Studio />} customClass={styles.users_button} />
+          </Link>
           <Button type="button" icon={<Notifivation />} customClass={styles.users_button} />
           <Button
             type="button"
