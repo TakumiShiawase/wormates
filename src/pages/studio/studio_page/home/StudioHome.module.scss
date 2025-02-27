@@ -1,0 +1,50 @@
+@font-face {
+  font-family: 'Dotty';
+  src: url(../../../../fonts/RalewayDots-6pgv.ttf);
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  padding-right: 30px;
+}
+.blocks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main_views {
+  margin-top: 49px;
+  color: #858585;
+  font-size: 70px;
+  font-family: 'Dotty';
+}
+.views {
+  color: white;
+  font-size: 34px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.hr {
+  width: 100%;
+}
+.upload {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+}
+.upload_icon {
+  fill: white;
+  &:active {
+    fill: #888;
+  }
+}

@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './BookDetailMobile.module.scss';
 import { useParams } from 'react-router-dom';
 import BookInfo from './components/detail_book_img/BookInfo';
+import AuthorsNote from './components/authors_note/AuthorsNote';
 import BookAuthorInfo from './components/book_author_info/BookAuthorInfo';
 import BookChapterInfo from './components/book_chapter_info/BookChapterInfo';
 import { useBookDetail } from '../../../hooks/useBookDetail';
@@ -29,9 +30,10 @@ const BookDetailMobile = () => {
         genre={bookDetail.genre}
         subgenres={bookDetail.subgenres}
         page={bookDetail.total_pages}
-        date={bookDetail.last_modified}
+        date={bookDetail.formatted_last_modified}
         text={bookDetail.description}
       />
+      <AuthorsNote content={bookDetail.authors_note} />
     </div>
   );
 };

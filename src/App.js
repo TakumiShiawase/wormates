@@ -12,6 +12,9 @@ import HomeMobile from './components/mobile/home/HomeMobile.js';
 import Reader from './pages/reader/Reader.js';
 import MainpageMobile from './pages/mobile/mainpage/MainpageMobile.js';
 import BookDetailMobile from './pages/mobile/book_detail/BookDetailMobile.js';
+import StudioHome from './pages/studio/studio_page/home/StudioHome.jsx';
+import Studio from './pages/studio/Studio.jsx';
+import StudioBook from './pages/studio/studio_page/studio_book/StudioBook.jsx';
 import { isMobile } from 'react-device-detect';
 
 import './App.css';
@@ -34,6 +37,10 @@ const App = () => {
           <Route path="/news" element={<News />} />
           <Route path="/history" element={<History />} />
           <Route path="/book/:book_id" element={<BookDetail />} />
+        </Route>
+        <Route path="/studio" element={<Studio />}>
+          <Route path="/studio" element={<StudioHome />} />
+          <Route path="/studio/books" element={<StudioBook />} />
         </Route>
       </Routes>
     </Router>

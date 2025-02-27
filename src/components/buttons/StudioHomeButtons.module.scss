@@ -1,0 +1,28 @@
+.button_block {
+  width: 300px;
+  height: 200px;
+  background: linear-gradient(to left, #000000 85%, #290038);
+  border-radius: 25px;
+  border: #565656 1px solid;
+  margin-right: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  &:active {
+    border-color: #888;
+    color: #888;
+  }
+}
+
+.button_title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.text {
+  font-size: 24px;
+  margin-bottom: 5px;
+}

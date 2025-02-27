@@ -1,0 +1,38 @@
+.sidebar {
+  width: 290px;
+  height: 100%;
+}
+
+.logo {
+  margin-left: 54px;
+  margin-top: 39px;
+}
+.logo_img {
+  fill: #fff;
+}
+
+.sidebar_button {
+  width: 192px;
+  height: 42px;
+  border: none;
+  display: flex;
+  padding-left: 18px;
+  align-items: center;
+  border-radius: 15px;
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 16px;
+  margin-left: 29px;
+  cursor: pointer;
+  &:hover {
+    background-color: #3f3f3f;
+  }
+}
+.button_icon {
+  margin-right: 12px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
